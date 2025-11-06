@@ -1,0 +1,1570 @@
+/* ============================================
+   TEMA ESCURO - EXPERIÊNCIA PREMIUM
+   ============================================ */
+
+/* Variáveis de cores para tema escuro */
+:root {
+    --dark-bg-primary: #0f0f0f;
+    --dark-bg-secondary: #1a1a1a;
+    --dark-bg-tertiary: #2d2d2d;
+    --dark-bg-hover: #3a3a3a;
+    --dark-border: #333333;
+    --dark-border-light: #404040;
+    --dark-text-primary: #ffffff;
+    --dark-text-secondary: #b3b3b3;
+    --dark-text-muted: #888888;
+    --dark-accent: #008EE0;
+    --dark-accent-hover: #00a0f0;
+    --dark-success: #00d4aa;
+    --dark-error: #ff6b6b;
+    --dark-warning: #ffb347;
+}
+
+/* ============================================
+   BODY E CONTAINER
+   ============================================ */
+body.tema-escuro {
+    background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.tema-escuro .container {
+    background: var(--dark-bg-primary);
+}
+
+html body.tema-escuro {
+    background: var(--dark-bg-primary) !important;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+body.tema-escuro .sidebar {
+    background: var(--dark-bg-secondary);
+    border-right: 1px solid var(--dark-border);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-escuro .sidebar .logo {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .sidebar nav ul li {
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .sidebar nav ul li a {
+    color: var(--dark-text-secondary);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .sidebar nav ul li:hover {
+    background: var(--dark-bg-tertiary) !important;
+    border-radius: 8px;
+    margin: 2px 8px;
+}
+
+body.tema-escuro .sidebar nav ul li:hover a {
+    background-color: transparent !important;
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .sidebar nav ul li.ativo {
+    background: var(--dark-bg-tertiary) !important;
+    border-radius: 8px;
+    margin: 2px 8px;
+}
+
+body.tema-escuro .sidebar nav ul li.ativo a {
+    background-color: transparent !important;
+    color: var(--dark-accent) !important;
+    border-left: 3px solid var(--dark-accent);
+    border-radius: 0;
+    font-weight: 600;
+}
+
+body.tema-escuro .sidebar nav ul li.ativo a i {
+    color: var(--dark-accent);
+}
+
+body.tema-escuro .usuario {
+    background: var(--dark-bg-secondary);
+    border-top: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .usuario .nome,
+body.tema-escuro .usuario .nome_usuario {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .usuario .logout {
+    color: var(--dark-text-secondary);
+    transition: color 0.2s ease;
+}
+
+body.tema-escuro .usuario .logout:hover {
+    color: var(--dark-error);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+body.tema-escuro .feed,
+body.tema-escuro .configuracoes-main,
+body.tema-escuro .mensagens-container {
+    background: var(--dark-bg-primary);
+}
+
+/* ============================================
+   TOPBAR E HEADER
+   ============================================ */
+body.tema-escuro .topbar {
+    background: transparent !important;
+    border-bottom: none !important;
+}
+
+body.tema-escuro .search-container {
+    background: transparent !important;
+}
+
+body.tema-escuro .search-container input {
+    background: var(--dark-bg-tertiary) !important;
+    border: 1px solid var(--dark-border) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .search-container input::placeholder {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .search-container input:focus {
+    border-color: var(--dark-accent) !important;
+    background: var(--dark-bg-hover) !important;
+}
+
+body.tema-escuro .icons {
+    background: transparent !important;
+}
+
+body.tema-escuro .icons i {
+    color: var(--dark-text-secondary) !important;
+    transition: color 0.2s ease;
+}
+
+body.tema-escuro .icons i:hover {
+    color: var(--dark-accent) !important;
+}
+
+/* ============================================
+   NOTIFICAÇÕES
+   ============================================ */
+body.tema-escuro .notifications-dropdown {
+    background: var(--dark-bg-tertiary) !important;
+    border: 1px solid var(--dark-border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.tema-escuro .notifications-dropdown ul li a {
+    color: var(--dark-text-primary) !important;
+    border-bottom: 1px solid var(--dark-border) !important;
+}
+
+body.tema-escuro .notifications-dropdown ul li a:hover {
+    background: var(--dark-bg-hover) !important;
+}
+
+body.tema-escuro .topbar .icons {
+    background: transparent !important;
+}
+
+body.tema-escuro .topbar .icons > * {
+    background: transparent !important;
+}
+
+body.tema-escuro .message-icon-wrapper,
+body.tema-escuro .bell-icon-wrapper {
+    background: transparent !important;
+}
+
+body.tema-escuro .search-container {
+    background: transparent !important;
+}
+
+/* ============================================
+   STORIES
+   ============================================ */
+body.tema-escuro .stories-container {
+    background: var(--dark-bg-secondary) !important;
+    border: 1px solid var(--dark-border) !important;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+body.tema-escuro .story-item {
+    background: var(--dark-bg-tertiary) !important;
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .story-item:hover {
+    background: var(--dark-bg-hover) !important;
+    border-color: var(--dark-border-light);
+}
+
+body.tema-escuro .story {
+    transition: transform 0.2s ease;
+}
+
+body.tema-escuro .story:hover {
+    transform: scale(1.05);
+}
+
+body.tema-escuro .story p {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .story-author-name,
+body.tema-escuro .story-author-username,
+body.tema-escuro .story-date {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .story-author-name {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .story-author-username {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .story-date {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .story-content-preview img {
+    border: 2px solid var(--dark-border);
+}
+
+body.tema-escuro .story-viewer {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+body.tema-escuro .story-close {
+    background: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .story-close:hover {
+    background: var(--dark-error);
+}
+
+/* ============================================
+   POSTS E CARDS
+   ============================================ */
+body.tema-escuro .post {
+    background: var(--dark-bg-secondary) !important;
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+body.tema-escuro .post:hover {
+    border-color: var(--dark-border-light);
+    box-shadow: 0 4px 20px rgba(0, 142, 224, 0.1);
+    transform: translateY(-2px);
+}
+
+body.tema-escuro .config-card,
+body.tema-escuro .evento-card {
+    background: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+body.tema-escuro .evento-card:hover {
+    border-color: var(--dark-border-light);
+    box-shadow: 0 4px 20px rgba(0, 142, 224, 0.1);
+    transform: translateY(-2px);
+}
+
+body.tema-escuro .post-header {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .post-header .post-author .author-name,
+body.tema-escuro .post-header .post-author .author-username,
+body.tema-escuro .post-content,
+body.tema-escuro .post-footer,
+body.tema-escuro .card-title,
+body.tema-escuro .evento-titulo,
+body.tema-escuro .evento-categoria {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .post-header .post-date {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .post-body p {
+    color: var(--dark-text-secondary);
+}
+
+/* ============================================
+   BOTÕES E INTERAÇÕES
+   ============================================ */
+body.tema-escuro .like-btn {
+    color: var(--dark-text-secondary);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .like-btn:hover {
+    color: var(--dark-error);
+    transform: scale(1.1);
+}
+
+body.tema-escuro .like-btn i.fa-solid {
+    color: var(--dark-error);
+}
+
+body.tema-escuro .comment-count,
+body.tema-escuro .like-count {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .btn-seguir,
+body.tema-escuro .seguir-btn {
+    background: var(--dark-accent);
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .btn-seguir:hover,
+body.tema-escuro .seguir-btn:hover {
+    background: var(--dark-accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 142, 224, 0.3);
+}
+
+body.tema-escuro .btn-editar-perfil {
+    background: var(--dark-bg-tertiary);
+    color: var(--dark-text-primary);
+    border: 1px solid var(--dark-border);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .btn-editar-perfil:hover {
+    background: var(--dark-bg-hover);
+    border-color: var(--dark-accent);
+    color: var(--dark-accent);
+}
+
+/* ============================================
+   INPUTS E FORMS
+   ============================================ */
+body.tema-escuro input[type="text"],
+body.tema-escuro input[type="password"],
+body.tema-escuro input[type="email"],
+body.tema-escuro input[type="date"],
+body.tema-escuro textarea,
+body.tema-escuro select {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro input::placeholder,
+body.tema-escuro textarea::placeholder {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro input:focus,
+body.tema-escuro textarea:focus,
+body.tema-escuro select:focus {
+    background: var(--dark-bg-hover);
+    border-color: var(--dark-accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 142, 224, 0.1);
+}
+
+/* ============================================
+   CAIXA DE PUBLICAÇÃO (NEW-POST)
+   ============================================ */
+body.tema-escuro .new-post {
+    background: var(--dark-bg-secondary) !important;
+    border: 1px solid var(--dark-border) !important;
+    color: var(--dark-text-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-escuro .new-post textarea {
+    background: var(--dark-bg-tertiary) !important;
+    color: var(--dark-text-primary) !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+body.tema-escuro .new-post textarea::placeholder {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .new-post textarea:focus {
+    border-color: var(--dark-accent) !important;
+    background: var(--dark-bg-hover) !important;
+    outline: none;
+}
+
+body.tema-escuro .new-post button {
+    background: var(--dark-accent) !important;
+    color: white !important;
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .new-post button:hover {
+    background: var(--dark-accent-hover) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 142, 224, 0.3);
+}
+
+/* ============================================
+   RIGHTBAR (SUGESTÕES)
+   ============================================ */
+body.tema-escuro .rightbar {
+    background: var(--dark-bg-secondary);
+    border-left: 1px solid var(--dark-border);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-escuro .rightbar h3 {
+    color: var(--dark-text-primary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .sugestao-item {
+    border-bottom: 1px solid var(--dark-border);
+    transition: background 0.2s ease;
+}
+
+body.tema-escuro .sugestao-item:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .perfil-link .user-info .nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .perfil-link .user-info .nome_usuario {
+    color: var(--dark-text-muted);
+}
+
+/* ============================================
+   COMENTÁRIOS
+   ============================================ */
+body.tema-escuro .comments-list {
+    background: var(--dark-bg-secondary);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+body.tema-escuro .comments-list .comment {
+    border-bottom: 1px solid var(--dark-border);
+    padding: 10px 0;
+}
+
+body.tema-escuro .comments-list .comment:last-child {
+    border-bottom: none;
+}
+
+body.tema-escuro .comments-list .comment p,
+body.tema-escuro .comments-list .comment strong {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .comment-input {
+    background: var(--dark-bg-secondary) !important;
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .comment-input::placeholder {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .comment-box {
+    background: var(--dark-bg-secondary) !important;
+    border-top: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .comment-box form {
+    background: var(--dark-bg-tertiary) !important;
+    border: 1px solid var(--dark-border);
+    border-radius: 15px;
+}
+
+body.tema-escuro .comment-input-wrapper {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    border-radius: 25px;
+}
+
+body.tema-escuro .comment-input {
+    background: transparent !important;
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .comment-input::placeholder {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .comment-box button {
+    background: var(--dark-accent);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .comment-box button:hover {
+    background: var(--dark-accent-hover);
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   EVENTOS
+   ============================================ */
+body.tema-escuro .eventos-header {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .eventos-header h1 {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .evento-info,
+body.tema-escuro .evento-local,
+body.tema-escuro .evento-descricao {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .evento-card {
+    transition: all 0.3s ease;
+}
+
+body.tema-escuro .evento-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 142, 224, 0.15);
+}
+
+body.tema-escuro .btn-interesse {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .btn-interesse:hover {
+    background: var(--dark-accent);
+    border-color: var(--dark-accent);
+    color: white;
+}
+
+body.tema-escuro .btn-interesse.ativo {
+    background: var(--dark-success);
+    border-color: var(--dark-success);
+    color: white;
+}
+
+body.tema-escuro .btn-editar-evento,
+body.tema-escuro .btn-deletar-evento {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .btn-editar-evento:hover {
+    background: var(--dark-accent);
+    border-color: var(--dark-accent);
+    color: white;
+}
+
+body.tema-escuro .btn-deletar-evento:hover {
+    background: var(--dark-error);
+    border-color: var(--dark-error);
+    color: white;
+}
+
+/* ============================================
+   MENSAGENS
+   ============================================ */
+body.tema-escuro .conversas-panel {
+    background: var(--dark-bg-secondary);
+    border-right: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .conversas-header {
+    background: var(--dark-bg-tertiary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .search-conversas input {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .conversa-item {
+    border-bottom: 1px solid var(--dark-border);
+    transition: background 0.2s ease;
+}
+
+body.tema-escuro .conversa-item:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .conversa-item.ativo {
+    background: var(--dark-bg-hover);
+    border-left: 3px solid var(--dark-accent);
+}
+
+body.tema-escuro .conversa-nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .conversa-preview {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .chat-panel {
+    background: var(--dark-bg-primary);
+}
+
+body.tema-escuro .chat-header {
+    background: var(--dark-bg-secondary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .chat-header-nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .chat-header-usuario {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .mensagens-area {
+    background: var(--dark-bg-primary);
+}
+
+body.tema-escuro .mensagem-item {
+    margin-bottom: 15px;
+}
+
+body.tema-escuro .mensagem-bubble {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .mensagem-item.minha-mensagem .mensagem-bubble {
+    background: var(--dark-accent);
+    border-color: var(--dark-accent);
+    color: white;
+}
+
+body.tema-escuro .mensagem-remetente {
+    color: var(--dark-text-muted);
+    font-size: 12px;
+}
+
+body.tema-escuro .mensagem-conteudo {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .mensagem-item.minha-mensagem .mensagem-conteudo {
+    color: white;
+}
+
+body.tema-escuro .mensagem-hora {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .mensagem-input-area {
+    background: var(--dark-bg-secondary);
+    border-top: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .mensagem-input-area input {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .mensagem-input-area button {
+    background: var(--dark-accent);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .mensagem-input-area button:hover {
+    background: var(--dark-accent-hover);
+}
+
+/* ============================================
+   PERFIL
+   ============================================ */
+body.tema-escuro .perfil-content {
+    background: var(--dark-bg-primary);
+}
+
+body.tema-escuro .perfil-header {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+body.tema-escuro .perfil-nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .perfil-handle {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .perfil-detalhes {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .perfil-stats .stat-item {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .perfil-section {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+body.tema-escuro .perfil-section h3 {
+    color: var(--dark-text-primary);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .esportes-list li {
+    border-bottom: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .esporte-nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .esporte-badge {
+    background: rgba(0, 142, 224, 0.2);
+    color: var(--dark-accent);
+    border-color: rgba(0, 142, 224, 0.3);
+}
+
+body.tema-escuro .esporte-frequencia-badge {
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+body.tema-escuro .postagem-card {
+    border: 1px solid var(--dark-border);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .postagem-card:hover {
+    border-color: var(--dark-accent);
+    transform: scale(1.02);
+}
+
+/* ============================================
+   CONFIGURAÇÕES
+   ============================================ */
+body.tema-escuro .configuracoes-main {
+    background: var(--dark-bg-primary) !important;
+    width: calc(100% - 223px) !important;
+    max-width: none !important;
+    left: 223px !important;
+}
+
+body.tema-escuro .header-card {
+    background: linear-gradient(135deg, var(--dark-bg-tertiary) 0%, var(--dark-bg-secondary) 100%);
+    border: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .radio-option:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .radio-custom {
+    border-color: var(--dark-border-light);
+}
+
+body.tema-escuro .radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: var(--dark-accent);
+}
+
+body.tema-escuro .radio-option input[type="radio"]:checked + .radio-custom::after {
+    background: var(--dark-accent);
+}
+
+body.tema-escuro .btn-salvar {
+    background: linear-gradient(135deg, var(--dark-accent) 0%, var(--dark-success) 100%);
+    box-shadow: 0 4px 15px rgba(0, 142, 224, 0.3);
+}
+
+body.tema-escuro .btn-salvar:hover {
+    box-shadow: 0 6px 20px rgba(0, 142, 224, 0.4);
+}
+
+body.tema-escuro .logout-card {
+    border-color: var(--dark-error);
+}
+
+body.tema-escuro .btn-sair {
+    border-color: var(--dark-error);
+    color: var(--dark-error);
+}
+
+body.tema-escuro .btn-sair:hover {
+    background: var(--dark-error);
+    color: white;
+}
+
+/* ============================================
+   ALERTS E MENSAGENS
+   ============================================ */
+body.tema-escuro .alert-success {
+    background: rgba(0, 212, 170, 0.15);
+    color: var(--dark-success);
+    border: 1px solid rgba(0, 212, 170, 0.3);
+}
+
+body.tema-escuro .alert-error {
+    background: rgba(255, 107, 107, 0.15);
+    color: var(--dark-error);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* ============================================
+   FEED TOGGLE
+   ============================================ */
+body.tema-escuro .feed-toggle .btn {
+    background: var(--dark-bg-tertiary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-secondary);
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .feed-toggle .btn:hover {
+    background: var(--dark-bg-hover);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .feed-toggle .btn.active {
+    background: var(--dark-accent);
+    border-color: var(--dark-accent);
+    color: white;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+body.tema-escuro .modal {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+body.tema-escuro .modal-content {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .modal-header {
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .modal-close {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .modal-close:hover {
+    color: var(--dark-error);
+}
+
+/* ============================================
+   EMOJI PICKER
+   ============================================ */
+body.tema-escuro .emoji-picker {
+    background: var(--dark-bg-secondary) !important;
+    border: 1px solid var(--dark-border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.tema-escuro .emoji-option {
+    transition: all 0.2s ease;
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .emoji-option:hover {
+    background: var(--dark-bg-tertiary) !important;
+    transform: scale(1.1);
+}
+
+body.tema-escuro .emoji-btn {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .emoji-btn:hover {
+    background: var(--dark-bg-tertiary) !important;
+}
+
+/* ============================================
+   SCROLLBAR PERSONALIZADA
+   ============================================ */
+body.tema-escuro ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+body.tema-escuro ::-webkit-scrollbar-track {
+    background: var(--dark-bg-secondary);
+}
+
+body.tema-escuro ::-webkit-scrollbar-thumb {
+    background: var(--dark-bg-tertiary);
+    border-radius: 4px;
+}
+
+body.tema-escuro ::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-border-light);
+}
+
+/* ============================================
+   TRANSITIONS GLOBAIS
+   ============================================ */
+body.tema-escuro * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* ============================================
+   BADGES E NOTIFICAÇÕES
+   ============================================ */
+body.tema-escuro .badge-nao-lidas {
+    background: var(--dark-accent);
+    color: white;
+}
+
+body.tema-escuro .notification-badge {
+    background: var(--dark-error);
+    border-color: var(--dark-bg-primary);
+}
+
+body.tema-escuro .file-input-label {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+}
+
+body.tema-escuro .file-input-label:hover {
+    background: linear-gradient(135deg, var(--dark-accent-hover), #00c8ff);
+}
+
+body.tema-escuro .file-name {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .post-btn {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+}
+
+body.tema-escuro .post-btn:hover {
+    background: linear-gradient(135deg, var(--dark-accent-hover), #00c8ff);
+}
+
+body.tema-escuro .ver-mais-btn {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+    color: white !important;
+}
+
+body.tema-escuro .ver-mais-btn:hover {
+    background: linear-gradient(135deg, var(--dark-accent-hover), #00c8ff);
+    color: white !important;
+}
+
+body.tema-escuro .back-to-top {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+}
+
+/* ============================================
+   RECUPERAÇÃO DE SENHA - TEMA ESCURO
+   ============================================ */
+body.tema-escuro .login-container {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+body.tema-escuro .login-container::before {
+    opacity: 0.1;
+}
+
+body.tema-escuro .login-box {
+    background: var(--dark-bg-secondary) !important;
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+body.tema-escuro .login-header h2 {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .login-header p {
+    color: var(--dark-text-secondary) !important;
+}
+
+body.tema-escuro .login-form .form-group label {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .login-form .form-group label i {
+    color: var(--dark-accent) !important;
+}
+
+body.tema-escuro .login-form .form-group input {
+    background: var(--dark-bg-tertiary) !important;
+    border-color: var(--dark-border) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .login-form .form-group input:focus {
+    border-color: var(--dark-accent) !important;
+    background: var(--dark-bg-hover) !important;
+    box-shadow: 0 0 0 4px rgba(0, 142, 224, 0.2) !important;
+}
+
+body.tema-escuro .login-form .form-group input::placeholder {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .btn-login {
+    background: linear-gradient(135deg, var(--dark-accent) 0%, var(--dark-accent-hover) 100%) !important;
+    box-shadow: 0 4px 15px rgba(0, 142, 224, 0.4) !important;
+}
+
+body.tema-escuro .btn-login:hover {
+    box-shadow: 0 6px 20px rgba(0, 142, 224, 0.5) !important;
+}
+
+body.tema-escuro .alert-error {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%) !important;
+    border-color: #ff5252 !important;
+    color: white !important;
+}
+
+body.tema-escuro .alert-success {
+    background: linear-gradient(135deg, #00d4aa 0%, #00ffc4 100%) !important;
+    border-color: #00c99a !important;
+    color: white !important;
+}
+
+body.tema-escuro .login-footer {
+    border-top-color: var(--dark-border) !important;
+}
+
+body.tema-escuro .login-footer a {
+    color: var(--dark-accent) !important;
+}
+
+body.tema-escuro .login-footer a:hover {
+    color: var(--dark-accent-hover) !important;
+}
+
+body.tema-escuro .login-form .password-wrapper .toggle-password {
+    color: var(--dark-text-secondary) !important;
+}
+
+body.tema-escuro .login-form .password-wrapper .toggle-password:hover {
+    color: var(--dark-accent) !important;
+}
+
+body.tema-escuro .back-to-top:hover {
+    background: linear-gradient(135deg, var(--dark-accent-hover), #00c8ff);
+}
+
+/* Eventos de Interesse - Tema Escuro */
+body.tema-escuro .eventos-interesse-section {
+    border-top-color: var(--dark-border);
+}
+
+body.tema-escuro .evento-interesse-item {
+    background: var(--dark-bg-secondary);
+}
+
+body.tema-escuro .evento-interesse-item:hover {
+    background: var(--dark-bg-hover);
+}
+
+body.tema-escuro .evento-interesse-titulo {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .evento-interesse-titulo:hover {
+    color: var(--dark-accent);
+}
+
+body.tema-escuro .evento-data {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .evento-badge {
+    background: var(--dark-accent);
+}
+
+body.tema-escuro .evento-badge.evento-hoje {
+    background: var(--dark-error);
+}
+
+body.tema-escuro .evento-badge.evento-amanha {
+    background: #ff8800;
+}
+
+body.tema-escuro .mensagem-lida {
+    color: var(--dark-accent) !important;
+}
+
+/* Página de Seguidores - Tema Escuro */
+body.tema-escuro .seguidores-main {
+    background: var(--dark-bg-primary);
+}
+
+body.tema-escuro .seguidores-container {
+    background: var(--dark-bg-primary);
+    border: none;
+}
+
+body.tema-escuro .seguidores-header {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+}
+
+body.tema-escuro .btn-voltar {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .btn-voltar:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+body.tema-escuro .search-input-wrapper {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+}
+
+body.tema-escuro .search-input-wrapper:focus-within {
+    border-color: var(--dark-accent);
+    background: var(--dark-bg-secondary);
+}
+
+body.tema-escuro .search-input {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .search-input::placeholder {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .search-input-wrapper i.fa-magnifying-glass {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .search-btn {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+}
+
+body.tema-escuro .search-btn:hover {
+    background: linear-gradient(135deg, var(--dark-accent-hover), #00c8ff);
+}
+
+body.tema-escuro .section-title {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .section-title i {
+    color: var(--dark-accent);
+}
+
+body.tema-escuro .usuario-card {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+}
+
+body.tema-escuro .usuario-card:hover {
+    background: var(--dark-bg-hover);
+    border-color: var(--dark-accent);
+}
+
+body.tema-escuro .usuario-avatar {
+    border-color: var(--dark-accent);
+}
+
+body.tema-escuro .usuario-card:hover .usuario-avatar {
+    border-color: var(--dark-accent-hover);
+}
+
+body.tema-escuro .usuario-nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .usuario-username {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .usuario-info:hover .usuario-nome {
+    color: var(--dark-accent);
+}
+
+body.tema-escuro .btn-seguir {
+    background: linear-gradient(135deg, var(--dark-accent), var(--dark-accent-hover));
+}
+
+body.tema-escuro .btn-seguir:hover {
+    background: linear-gradient(135deg, var(--dark-accent-hover), #00c8ff);
+}
+
+body.tema-escuro .btn-deixar-seguir {
+    background: var(--dark-bg-secondary);
+    color: var(--dark-text-secondary);
+    border-color: var(--dark-border);
+}
+
+body.tema-escuro .btn-deixar-seguir:hover {
+    background: var(--dark-error);
+    color: white;
+    border-color: var(--dark-error);
+}
+
+body.tema-escuro .sem-resultados {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .sem-resultados i {
+    color: var(--dark-border);
+}
+
+body.tema-escuro .sem-resultados p {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .texto-secundario {
+    color: var(--dark-text-muted) !important;
+}
+
+/* Modal de Seguidores/Seguindo - Tema Escuro */
+body.tema-escuro .modal-seguidores {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+body.tema-escuro .modal-content-seguidores {
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .modal-header-seguidores {
+    border-bottom-color: var(--dark-border);
+}
+
+body.tema-escuro .modal-header-seguidores h2 {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .modal-close {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .modal-close:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .usuario-item-modal {
+    border-bottom-color: var(--dark-border);
+}
+
+body.tema-escuro .usuario-item-modal:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .usuario-avatar-modal {
+    border-color: var(--dark-border);
+}
+
+body.tema-escuro .usuario-nome-modal {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .usuario-username-modal {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .usuario-info-modal:hover .usuario-nome-modal {
+    color: var(--dark-accent);
+}
+
+body.tema-escuro .btn-seguir-modal {
+    background: var(--dark-accent);
+    border-color: var(--dark-accent);
+}
+
+body.tema-escuro .btn-seguir-modal:hover {
+    background: var(--dark-accent-hover);
+    border-color: var(--dark-accent-hover);
+}
+
+body.tema-escuro .btn-deixar-seguir-modal {
+    background: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
+    border-color: var(--dark-border);
+}
+
+body.tema-escuro .btn-deixar-seguir-modal:hover {
+    background: var(--dark-bg-tertiary);
+    border-color: var(--dark-border);
+}
+
+body.tema-escuro .loading-seguidores {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .loading-seguidores i {
+    color: var(--dark-accent);
+}
+
+/* ============================================
+   FILE INPUT E DISPLAY
+   ============================================ */
+body.tema-escuro .file-name-display {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .file-input-wrapper {
+    background: transparent;
+}
+
+/* ============================================
+   NOVAS CONVERSAS (MENSAGENS)
+   ============================================ */
+body.tema-escuro .sugestoes-header {
+    background: var(--dark-bg-tertiary) !important;
+    border-bottom: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .sugestoes-header h3 {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .conversa-item {
+    background: var(--dark-bg-secondary);
+    border-bottom: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .conversa-item:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .conversa-item.ativo {
+    background: rgba(0, 142, 224, 0.1);
+    border-left: 4px solid var(--dark-accent);
+}
+
+body.tema-escuro .conversa-nome {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .conversa-preview {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .sem-conversas {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .conversa-info {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .conversa-data {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .sugestoes-conversas {
+    background: var(--dark-bg-secondary) !important;
+    border-top: 1px solid var(--dark-border);
+}
+
+body.tema-escuro .sugestao-item {
+    background: var(--dark-bg-secondary) !important;
+    border-bottom: 1px solid var(--dark-border);
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .sugestao-item:hover {
+    background: var(--dark-bg-tertiary) !important;
+}
+
+body.tema-escuro .sugestao-nome {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .sugestao-username {
+    color: var(--dark-text-muted) !important;
+}
+
+/* ============================================
+   FORMULÁRIO DE CRIAR/EDITAR EVENTO
+   ============================================ */
+body.tema-escuro .form-container {
+    background: var(--dark-bg-secondary) !important;
+    border: 1px solid var(--dark-border) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.tema-escuro .evento-form {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .form-group label {
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .form-group input,
+body.tema-escuro .form-group select,
+body.tema-escuro .form-group textarea {
+    background: var(--dark-bg-tertiary) !important;
+    color: var(--dark-text-primary) !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+body.tema-escuro .form-group input:focus,
+body.tema-escuro .form-group select:focus,
+body.tema-escuro .form-group textarea:focus {
+    border-color: var(--dark-accent) !important;
+    background: var(--dark-bg-hover) !important;
+    outline: none;
+}
+
+body.tema-escuro .form-group input::placeholder,
+body.tema-escuro .form-group textarea::placeholder {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .form-group input[type="file"] {
+    background: var(--dark-bg-tertiary) !important;
+    border: 2px dashed var(--dark-border) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+body.tema-escuro .form-group input[type="file"]:hover {
+    border-color: var(--dark-accent) !important;
+    background: var(--dark-bg-hover) !important;
+}
+
+body.tema-escuro .form-group small {
+    color: var(--dark-text-muted) !important;
+}
+
+body.tema-escuro .form-actions {
+    border-top: 1px solid var(--dark-border) !important;
+}
+
+body.tema-escuro .btn-cancelar,
+body.tema-escuro .btn-salvar {
+    transition: all 0.2s ease;
+}
+
+body.tema-escuro .btn-salvar {
+    background: var(--dark-accent) !important;
+    color: white !important;
+}
+
+body.tema-escuro .btn-salvar:hover {
+    background: var(--dark-accent-hover) !important;
+}
+
+body.tema-escuro .btn-cancelar {
+    background: var(--dark-bg-tertiary) !important;
+    color: var(--dark-text-primary) !important;
+    border: 1px solid var(--dark-border) !important;
+}
+
+body.tema-escuro .btn-cancelar:hover {
+    background: var(--dark-bg-hover) !important;
+    border-color: var(--dark-border-light) !important;
+}
+
+body.tema-escuro .btn-voltar {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .btn-voltar:hover {
+    color: var(--dark-accent);
+}
+
+body.tema-escuro .alert-success {
+    background: rgba(0, 212, 170, 0.2);
+    color: var(--dark-success);
+    border: 1px solid var(--dark-success);
+}
+
+body.tema-escuro .alert-error {
+    background: rgba(255, 107, 107, 0.2);
+    color: var(--dark-error);
+    border: 1px solid var(--dark-error);
+}
+
+body.tema-escuro .sem-resultados-modal {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .erro-modal {
+    color: var(--dark-error);
+}
+
+body.tema-escuro .stat-item.clickable:hover {
+    background: var(--dark-bg-tertiary);
+}
+
+body.tema-escuro .stat-item strong {
+    color: var(--dark-text-primary);
+}
+
+body.tema-escuro .stat-item span {
+    color: var(--dark-text-muted);
+}
+
+body.tema-escuro .perfil-detalhes {
+    color: var(--dark-text-secondary);
+}
+
+body.tema-escuro .perfil-detalhe-item {
+    color: var(--dark-text-secondary);
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+body.tema-escuro a {
+    color: var(--dark-accent);
+    transition: color 0.2s ease;
+}
+
+body.tema-escuro a:hover {
+    color: var(--dark-accent-hover);
+}

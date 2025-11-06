@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página Inicial</title>
+  <link rel="stylesheet" href="../assets/css/cadastro_user.css">
+  <link rel="stylesheet" href="../assets/css/tema-escuro.css">
+  <link rel="stylesheet" href="../assets/css/responsivo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <script src="../assets/js/tema.js"></script>
+<?php session_start(); ?>  
+
+
+</head>
+
+<body>
+  <!-- Conteúdo Principal -->
+  <main class="main-content">
+    <img src="../assets/img/img_registro.png" alt="">
+
+    <form action="cadastra-usuario.php" method="post" class="form-container" enctype="multipart/form-data">
+
+      <h2 class="main-title">CRIE SUA CONTA</h2>
+
+      <?php
+      if (isset($_SESSION['msg'])) {
+          $tipo = isset($_SESSION['msg_tipo']) ? $_SESSION['msg_tipo'] : 'info';
+          $classe = $tipo === 'erro' ? 'alert-error' : 'alert-success';
+          echo '<div class="alert ' . $classe . '" style="margin-bottom: 20px; padding: 10px; background-color: ' . ($tipo === 'erro' ? '#ffebee' : '#e8f5e9') . '; color: ' . ($tipo === 'erro' ? '#c62828' : '#2e7d32') . '; border-radius: 4px;">' . htmlspecialchars($_SESSION['msg']) . '</div>';
+          unset($_SESSION['msg']);
+          unset($_SESSION['msg_tipo']);
+      }
+      ?>
+
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Nome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nome_usuario">Usuário</label>
+        <input type="text" id="nome_usuario" name="nome_usuario" placeholder="Nome de Usuário" required>
+      </div>
+
+      <div class="form-group">
+        <label for="nascimento">Data de Nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+      </div>
+
+      
+
+      <div class="form-group">
+  <label for="senha">Senha</label>
+  <div class="password-wrapper">
+    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+    <span class="toggle-password material-symbols-outlined">visibility_off</span>
+  </div>
+</div>
+
+      <div class="form-group upload-group">
+        <label for="imagem">Foto de Perfil</label>
+        <div class="upload-container">
+          <label for="imagem">
+            <img id="preview" class="upload-preview" src="../assets/img/placeholder2.png" alt="Foto de perfil">
+          </label>
+          <input type="file" id="imagem" name="imagem" accept="image/*" class="upload-input">
+        </div>
+      </div>
+      </div>
+
+      <div class="botao">
+      <button type="submit" class="submit-btn">Criar Conta</button>
+      </div>
+      <div class="login">
+      <p>Ja tem uma conta?<span><a href="login.php">Fazer Login</a></span></p>
+      </div>
+    </form>
+  </main>
+
+
+  <script>
+    // senha visivel ou não
+      const togglePassword = document.querySelector('.toggle-password');
+  const passwordInput = document.querySelector('#senha');
+
+  togglePassword.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    togglePassword.textContent = isPassword ? 'visibility' : 'visibility_off';
+  });
+
+
+    //Imagem da foto de perfil com preview
+    const input = document.getElementById('imagem');
+    const preview = document.getElementById('preview');
+
+    input.addEventListener('change', () => {
+      const file = input.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = e => preview.src = e.target.result;
+        reader.readAsDataURL(file);
+      }
+    });
+
+  </script>
+</body>
+
+</html>
+

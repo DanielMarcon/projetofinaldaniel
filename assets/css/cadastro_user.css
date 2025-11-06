@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+ overflow-x: auto;  /* Permite o scroll horizontal */
+    overflow-y: hidden; /* Desabilita o scroll vertical */
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Garante que o conteúdo seja centralizado */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  width: 100vw; /* Ocupa toda a largura da tela */
+   position: relative;
+}
+
+.main-content img {
+  width: 50%; /* A imagem ocupa metade da tela */
+  height: 100%; /* A altura da imagem é ajustada para 100% */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  object-position: top; /* Garante que o topo da imagem seja exibido */
+}
+
+.main-content img {
+  width: 50%; /* A imagem ocupa metade da tela */
+  height: 100%; /* A altura da imagem é ajustada para 100% */
+  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+}
+
+.form-container {
+  width: 50%; /* O formulário ocupa metade da tela */
+  background-color: #BADCDE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinha o conteúdo do formulário no topo */
+  padding: 40px;
+  box-shadow: none;
+  border-radius: 0;
+  overflow-y: auto; /* Permite rolar no conteúdo do formulário, se necessário */
+  height: 100%; /* Garantir que o formulário ocupe toda a altura disponível */
+}
+
+.main-title {
+   font-family: "Staatliches", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 86px;
+  color: #343a40;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #495057;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.upload-group {
+  text-align: center;
+}
+
+.upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 2px solid #ced4da;
+  background-color: #e9ecef;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.upload-preview:hover {
+  transform: scale(1.05);
+  border-color: #007bff;
+}
+
+.upload-input {
+  display: none;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 20px;
+  user-select: none;
+}
+
+.submit-btn {
+  width: 45%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #008EE0;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+}
+
+.submit-btn:hover {
+  background-color: #0057b3ce;
+}
+
+.login {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.login span {
+  color: #3a77fa;
+}
+
+.login a {
+  text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .main-content {
+    flex-direction: column; /* Empilha a imagem e o formulário em telas pequenas */
+  }
+
+  .main-content img {
+    width: 100%;
+    height: auto; /* Ajusta a altura automaticamente */
+  }
+
+  .form-container {
+    width: 100%; /* O formulário ocupa toda a largura em telas pequenas */
+    padding: 20px;
+    margin: 20px 10px;
+    height: auto; /* Deixa a altura do formulário ajustável */
+  }
+
+  .form-group input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .upload-preview {
+    width: 100px;
+    height: 100px;
+  }
+
+  .toggle-password {
+    font-size: 18px;
+    right: 10px;
+  }
+}
