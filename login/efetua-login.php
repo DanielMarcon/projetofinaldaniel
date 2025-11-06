@@ -10,7 +10,7 @@
         $_SESSION['nome_usuario'] = $usuarios['nome_usuario'];
         $_SESSION['email'] = $usuarios['email'];
         $_SESSION['nascimento'] = $usuarios['nascimento'];
-        header("Location:../home.php");
+        header("Location:../index.php");
     }else{
         $_SESSION['msg'] = "Usuário ou senha inválido.";
         
