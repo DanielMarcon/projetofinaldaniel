@@ -9,6 +9,7 @@ body, html {
   margin: 0;
  overflow-x: auto;  /* Permite o scroll horizontal */
     overflow-y: hidden; /* Desabilita o scroll vertical */
+    align-items: center;
 }
 
 .main-content {
@@ -17,10 +18,11 @@ body, html {
   align-items: center; /* Garante que o conteúdo seja centralizado */
   height: 100vh; /* Ocupa toda a altura da tela */
   width: 100vw; /* Ocupa toda a largura da tela */
-   position: relative;
+  position: relative;
+  align-items: center;
 }
 
-.main-content img {
+.main-content img { 
   width: 50%; /* A imagem ocupa metade da tela */
   height: 100%; /* A altura da imagem é ajustada para 100% */
   object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
@@ -34,7 +36,7 @@ body, html {
 }
 
 .form-container {
-  width: 50%; /* O formulário ocupa metade da tela */
+  width: 100%;
   background-color: #BADCDE;
   display: flex;
   flex-direction: column;

@@ -7,7 +7,7 @@
   <title>Página Inicial</title>
   <link rel="stylesheet" href="../assets/css/cadastro_user.css">
   <link rel="stylesheet" href="../assets/css/tema-escuro.css">
-  <link rel="stylesheet" href="../assets/css/responsivo.css">
+  <!-- <link rel="stylesheet" href="../assets/css/responsivo.css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,6 @@
 <body>
   <!-- Conteúdo Principal -->
   <main class="main-content">
-    <img src="../assets/img/img_registro.png" alt="">
 
     <form action="cadastra-usuario.php" method="post" class="form-container" enctype="multipart/form-data">
 

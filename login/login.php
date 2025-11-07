@@ -7,10 +7,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - SportForYou</title>
+  <title>Faça login</title>
   <link rel="stylesheet" href="../assets/css/login.css">
   <link rel="stylesheet" href="../assets/css/tema-escuro.css">
-  <link rel="stylesheet" href="../assets/css/responsivo.css">
+  <!-- <link rel="stylesheet" href="../assets/css/responsivo.css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +18,12 @@
   <script src="../assets/js/tema.js"></script>
 </head>
 
-<body>
+<body class="imagem-filtro" >
   <main class="main-content">
 
     <form action="efetua-login.php" method="post" class="form-container">
         <div class="topo">
-      <h2 class="main-title">SPORT <br>FOR <br>YOU</h2>
-      <img src="../assets/img/Vector.png" alt="" class="vetor">
+      <h2 class="main-title">Sport <br>Connect</h2>
       </div>
 
       <?php
