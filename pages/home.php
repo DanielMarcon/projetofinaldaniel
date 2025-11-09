@@ -1,102 +1,14 @@
 <?php
 include "../login/incs/valida-sessao.php";
-require_once "../login/src/StoryDAO.php";
 require_once "../login/src/PostagemDAO.php";
 require_once "../login/src/UsuarioDAO.php";
 require_once "../login/src/CurtiuDAO.php";
 require_once "../login/src/ComentarioDAO.php";
 require_once "../login/src/ConexaoBD.php";
-require_once "../login/src/EventoDAO.php";
 
 $idusuario_logado = $_SESSION['idusuarios'];
 
-// Verifica e cria notificações de eventos (1 dia antes e no dia)
-$hoje = date('Y-m-d');
-$amanha = date('Y-m-d', strtotime('+1 day'));
 
-$pdo = ConexaoBD::conectar();
-
-// Notificações 1 dia antes
-$sqlAmanha = "SELECT e.*, ei.usuario_id 
-              FROM eventos e
-              INNER JOIN eventos_interessados ei ON e.idevento = ei.evento_id
-              WHERE e.data_evento = ? AND ei.usuario_id = ?";
-$stmtAmanha = $pdo->prepare($sqlAmanha);
-$stmtAmanha->execute([$amanha, $idusuario_logado]);
-$eventosAmanha = $stmtAmanha->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($eventosAmanha as $evento) {
-    $horaFormatada = $evento['hora_evento'] ? date('H:i', strtotime($evento['hora_evento'])) : '';
-    $mensagem = "O evento '{$evento['titulo']}' acontece amanhã";
-    if ($horaFormatada) {
-        $mensagem .= " às {$horaFormatada}";
-    }
-    $link = "eventos.php#evento-{$evento['idevento']}";
-    
-    // Verifica se já existe notificação para evitar duplicatas
-    // Tenta com idusuario primeiro, depois com id_usuario
-    try {
-        $sqlCheck = "SELECT COUNT(*) FROM notificacoes 
-                     WHERE idusuario = ? AND tipo = 'evento' AND mensagem LIKE ? AND data >= DATE_SUB(NOW(), INTERVAL 1 DAY)";
-        $stmtCheck = $pdo->prepare($sqlCheck);
-        $stmtCheck->execute([$idusuario_logado, "%{$evento['titulo']}%"]);
-    } catch (PDOException $e) {
-        // Se não existir coluna idusuario, tenta id_usuario
-        $sqlCheck = "SELECT COUNT(*) FROM notificacoes 
-                     WHERE id_usuario = ? AND tipo = 'evento' AND mensagem LIKE ? AND data >= DATE_SUB(NOW(), INTERVAL 1 DAY)";
-        $stmtCheck = $pdo->prepare($sqlCheck);
-        $stmtCheck->execute([$idusuario_logado, "%{$evento['titulo']}%"]);
-    }
-    
-    if ($stmtCheck->fetchColumn() == 0) {
-        UsuarioDAO::adicionarNotificacao($idusuario_logado, 'evento', $mensagem, $link);
-    }
-}
-
-// Notificações no dia do evento
-$sqlHoje = "SELECT e.*, ei.usuario_id 
-            FROM eventos e
-            INNER JOIN eventos_interessados ei ON e.idevento = ei.evento_id
-            WHERE e.data_evento = ? AND ei.usuario_id = ?";
-$stmtHoje = $pdo->prepare($sqlHoje);
-$stmtHoje->execute([$hoje, $idusuario_logado]);
-$eventosHoje = $stmtHoje->fetchAll(PDO::FETCH_ASSOC);
-
-foreach ($eventosHoje as $evento) {
-    $horaFormatada = $evento['hora_evento'] ? date('H:i', strtotime($evento['hora_evento'])) : '';
-    $mensagem = "O evento '{$evento['titulo']}' acontece hoje";
-    if ($horaFormatada) {
-        $mensagem .= " às {$horaFormatada}";
-    }
-    $link = "eventos.php#evento-{$evento['idevento']}";
-    
-    // Verifica se já existe notificação para evitar duplicatas
-    // Tenta com idusuario primeiro, depois com id_usuario
-    try {
-        $sqlCheck = "SELECT COUNT(*) FROM notificacoes 
-                     WHERE idusuario = ? AND tipo = 'evento' AND mensagem LIKE ? AND DATE(data) = ?";
-        $stmtCheck = $pdo->prepare($sqlCheck);
-        $stmtCheck->execute([$idusuario_logado, "%{$evento['titulo']}%", $hoje]);
-    } catch (PDOException $e) {
-        // Se não existir coluna idusuario, tenta id_usuario
-        $sqlCheck = "SELECT COUNT(*) FROM notificacoes 
-                     WHERE id_usuario = ? AND tipo = 'evento' AND mensagem LIKE ? AND DATE(data) = ?";
-        $stmtCheck = $pdo->prepare($sqlCheck);
-        $stmtCheck->execute([$idusuario_logado, "%{$evento['titulo']}%", $hoje]);
-    }
-    
-    if ($stmtCheck->fetchColumn() == 0) {
-        UsuarioDAO::adicionarNotificacao($idusuario_logado, 'evento', $mensagem, $link);
-    }
-}
-
-if (isset($_GET['id'])) {
-    UsuarioDAO::marcarComoLida($_GET['id']);
-}
-
-$notificacoes = UsuarioDAO::listarNotificacoes($idusuario_logado);
-
-$stories = StoryDAO::listarRecentes();
 $sugestoes = UsuarioDAO::listarSugestoes($idusuario_logado);
 
 $feed = $_GET['feed'] ?? 'seguindo'; // padrão: seguindo

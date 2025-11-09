@@ -17,7 +17,7 @@ $usuarios = UsuarioDAO::buscarUsuarioNome($_GET["nome"]);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Usuários - SportForYou</title>
+    <title>Buscar Usuários - SportConnect</title>
     <link rel="stylesheet" href="../assets/css/feed.css">
     <link rel="stylesheet" href="../assets/css/seguidores.css">
     <link rel="stylesheet" href="../assets/css/tema-escuro.css">

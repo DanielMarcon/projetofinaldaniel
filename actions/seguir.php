@@ -11,11 +11,6 @@ if (isset($_GET["idseguidor"])) {
     // A função seguir espera: seguir($idusuario_seguido, $idseguidor_seguindo)
     SeguidoDAO::seguir($idusuario, $idseguidor);
 
-    // Cria mensagem de notificação
-    $mensagem = "@" . $_SESSION['nome_usuario'] . " começou a seguir você!";
-
-    // Adiciona a notificação para o usuário seguido
-    UsuarioDAO::adicionarNotificacao($idusuario, 'seguidor', $mensagem);
 } 
 
 // Redireciona de volta para a página de origem (ou home.php se não houver referer)
