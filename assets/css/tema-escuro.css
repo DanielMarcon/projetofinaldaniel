@@ -13,8 +13,8 @@
     --dark-text-primary: #ffffff;
     --dark-text-secondary: #b3b3b3;
     --dark-text-muted: #888888;
-    --dark-accent: #008EE0;
-    --dark-accent-hover: #00a0f0;
+    --dark-accent: #c2bf00;
+    --dark-accent-hover: #ecdd03;
     --dark-success: #00d4aa;
     --dark-error: #ff6b6b;
     --dark-warning: #ffb347;
@@ -26,7 +26,7 @@
 body.tema-escuro {
     background: var(--dark-bg-primary) !important;
     color: var(--dark-text-primary) !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0s ease, color 0s ease;
 }
 
 body.tema-escuro .container {

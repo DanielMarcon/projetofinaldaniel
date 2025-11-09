@@ -14,7 +14,7 @@ $erro = $_GET['erro'] ?? '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configurações - SportForYou</title>
+    <title>Configurações - SportConnect</title>
     <link rel="stylesheet" href="../assets/css/feed.css">
     <link rel="stylesheet" href="../assets/css/configuracoes.css">
     <link rel="stylesheet" href="../assets/css/tema-escuro.css">
@@ -26,14 +26,12 @@ $erro = $_GET['erro'] ?? '';
         <!-- Sidebar esquerda -->
         <aside class="sidebar">
             <div class="logo">
-                <img src="../assets/img/logo1.png" alt="Logo SportForYou">
+                <img src="../assets/img/logo1.png" alt="Logo SportConnect">
             </div>
             <?php $paginaAtual = basename($_SERVER['PHP_SELF']); ?>
             <nav>
                 <ul>
                     <li class="<?= $paginaAtual == 'home.php' ? 'ativo' : '' ?>"><a href="home.php"><i class="fa-solid fa-house"></i> Feed</a></li>
-                    <li class="<?= $paginaAtual == 'mensagens.php' ? 'ativo' : '' ?>"><a href="mensagens.php"><i class="fa-solid fa-message"></i> Mensagens</a></li>
-                    <li class="<?= $paginaAtual == 'eventos.php' ? 'ativo' : '' ?>"><a href="eventos.php"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
                     <li class="<?= $paginaAtual == 'configuracoes.php' ? 'ativo' : '' ?>"><a href="configuracoes.php"><i class="fa-solid fa-gear"></i> Configurações</a></li>
                 </ul>
             </nav>
@@ -70,23 +68,6 @@ $erro = $_GET['erro'] ?? '';
                 <div class="card-header-content">
                     <i class="fa-solid fa-gear"></i>
                     <h1>Configurações</h1>
-                </div>
-            </div>
-
-            <!-- Card Tema -->
-            <div class="config-card">
-                <h2 class="card-title">Tema</h2>
-                <div class="theme-options">
-                    <label class="radio-option">
-                        <input type="radio" name="tema" value="claro" id="tema-claro" checked>
-                        <span class="radio-custom"></span>
-                        <span class="radio-label">Claro</span>
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="tema" value="escuro" id="tema-escuro">
-                        <span class="radio-custom"></span>
-                        <span class="radio-label">Escuro</span>
-                    </label>
                 </div>
             </div>
 

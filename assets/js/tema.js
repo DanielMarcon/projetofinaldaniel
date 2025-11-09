@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (temaSalvo === 'escuro') {
         aplicarTemaEscuro();
     } else {
-        aplicarTemaClaro();
+        aplicarTemaEscuro();
     }
 });
 

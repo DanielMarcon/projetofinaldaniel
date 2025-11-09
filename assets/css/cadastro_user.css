@@ -4,52 +4,49 @@
   box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
-  margin: 0;
- overflow-x: auto;  /* Permite o scroll horizontal */
-    overflow-y: hidden; /* Desabilita o scroll vertical */
-    align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  line-height: 1.6;
+  overflow-x: auto;
+  background-image: url("../img/fundo_login.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
 }
 
 .main-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* Garante que o conteúdo seja centralizado */
-  height: 100vh; /* Ocupa toda a altura da tela */
-  width: 100vw; /* Ocupa toda a largura da tela */
-  position: relative;
+  margin: 50px 0;
+  padding: 0 10px;
   align-items: center;
+  text-align: center;
 }
 
-.main-content img { 
-  width: 50%; /* A imagem ocupa metade da tela */
-  height: 100%; /* A altura da imagem é ajustada para 100% */
-  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
-  object-position: top; /* Garante que o topo da imagem seja exibido */
-}
+
 
 .main-content img {
-  width: 50%; /* A imagem ocupa metade da tela */
-  height: 100%; /* A altura da imagem é ajustada para 100% */
-  object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+  width: 50%;
+  /* A imagem ocupa metade da tela */
+  height: 100%;
+  /* A altura da imagem é ajustada para 100% */
+  object-fit: cover;
+  /* Garante que a imagem cubra a área sem distorcer */
 }
 
 .form-container {
-  width: 100%;
-  background-color: #BADCDE;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Alinha o conteúdo do formulário no topo */
-  padding: 40px;
-  box-shadow: none;
-  border-radius: 0;
-  overflow-y: auto; /* Permite rolar no conteúdo do formulário, se necessário */
-  height: 100%; /* Garantir que o formulário ocupe toda a altura disponível */
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #ffffffc2;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  align-items: center;
 }
 
 .main-title {
-   font-family: "Staatliches", sans-serif;
+  font-family: "Staatliches", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 86px;
@@ -168,19 +165,23 @@ body, html {
 /* Responsividade */
 @media (max-width: 600px) {
   .main-content {
-    flex-direction: column; /* Empilha a imagem e o formulário em telas pequenas */
+    flex-direction: column;
+    /* Empilha a imagem e o formulário em telas pequenas */
   }
 
   .main-content img {
     width: 100%;
-    height: auto; /* Ajusta a altura automaticamente */
+    height: auto;
+    /* Ajusta a altura automaticamente */
   }
 
   .form-container {
-    width: 100%; /* O formulário ocupa toda a largura em telas pequenas */
+    width: 100%;
+    /* O formulário ocupa toda a largura em telas pequenas */
     padding: 20px;
     margin: 20px 10px;
-    height: auto; /* Deixa a altura do formulário ajustável */
+    height: auto;
+    /* Deixa a altura do formulário ajustável */
   }
 
   .form-group input {

@@ -129,7 +129,7 @@ if (!empty($idsPostagens)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>SportForYou</title>
+    <title>SportConnect</title>
     <link rel="stylesheet" href="../assets/css/feed.css">
     <link rel="stylesheet" href="../assets/css/tema-escuro.css">
     <link rel="stylesheet" href="../assets/css/responsivo.css">
@@ -141,15 +141,12 @@ if (!empty($idsPostagens)) {
         <!-- Sidebar esquerda -->
         <aside class="sidebar" id="sidebar">
             <div class="logo">
-                <img src="../assets/img/logo1.png" alt="Logo SportForYou">
+                <img src="../assets/img/logo1.png" alt="Logo SportConnect">
             </div>
             <?php $paginaAtual = basename($_SERVER['PHP_SELF']); ?>
 <nav>
     <ul>
                     <li class="<?= $paginaAtual == 'home.php' ? 'ativo' : '' ?>"><a href="home.php"><i class="fa-solid fa-house"></i> Feed</a></li>
-                    <li class="<?= $paginaAtual == 'mensagens.php' ? 'ativo' : '' ?>"><a href="mensagens.php"><i class="fa-solid fa-message"></i> Mensagens</a></li>
-                    <li class="<?= $paginaAtual == 'eventos.php' ? 'ativo' : '' ?>"><a href="eventos.php"><i class="fa-solid fa-calendar-days"></i> Eventos</a></li>
-                    <!-- <li class="<?= $paginaAtual == 'salvos.php' ? 'ativo' : '' ?>"><a href="salvos.php"><i class="fa-solid fa-star"></i> Salvos</a></li> -->
                     <li class="<?= $paginaAtual == 'configuracoes.php' ? 'ativo' : '' ?>"><a href="configuracoes.php"><i class="fa-solid fa-gear"></i> Configurações</a></li>
     </ul>
 </nav>
@@ -183,103 +180,16 @@ if (!empty($idsPostagens)) {
 
 
                 <div class="icons">
-    <a href="mensagens.php" class="message-icon-wrapper" style="position: relative; text-decoration: none; color: inherit;">
-        <i class="fa-solid fa-message" id="message-icon"></i>
-        <span id="message-badge" class="notification-badge" style="display: none;"></span>
-    </a>
-    <a href="mensagens.php" class="bell-icon-wrapper" style="position: relative; text-decoration: none; color: inherit;">
-        <i class="fa-regular fa-bell" id="bell-icon"></i>
-        <span id="notification-badge" class="notification-badge" style="display: none;"></span>
-    </a>
-    <div id="notifications" class="notifications-dropdown">
-        <?php if (!empty($notificacoes)): ?>
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #eee;">
-                <strong>Notificações</strong>
-                <a href="../api/limpar_notificacoes.php" style="font-size: 12px; color: #007bff; text-decoration: none;">Limpar todas</a>
-            </div>
-            <ul>
-                <?php foreach ($notificacoes as $notificacao): 
-                    // Define o link baseado no tipo de notificação
-                    if ($notificacao['tipo'] == 'mensagem' && isset($notificacao['link']) && !empty($notificacao['link'])) {
-                        $linkNotificacao = htmlspecialchars($notificacao['link']);
-                    } elseif ($notificacao['tipo'] == 'mensagem') {
-                        // Se não tiver link na tabela, tenta extrair o ID da conversa
-                        $linkNotificacao = "mensagens.php";
-                    } else {
-                        $linkNotificacao = "home.php?id=" . $notificacao['id'];
-                    }
-                ?>
-                    <li>
-                        <a href="<?= $linkNotificacao ?>" onclick="marcarNotificacaoLida(<?= $notificacao['id'] ?>)">
-                            <p><?= htmlspecialchars($notificacao['mensagem']) ?></p>
-                            <small><?= $notificacao['data'] ?></small>
-                        </a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-        <?php else: ?>
-            <p>Sem notificações novas.</p>
-        <?php endif; ?>
-    </div>
+
+
+
 </div>
 
             </header>
 
             
 
-           <div class="stories-container">
-    <form class="add-story" action="../actions/enviar_story.php" method="POST" enctype="multipart/form-data">
-        <label for="story-file">+</label>
-        <input type="file" id="story-file" name="story" accept="image/*,video/*" onchange="this.form.submit()">
-    </form>
 
-    <div class="stories">
-        <?php foreach ($stories as $story): 
-            $dataStory = new DateTime($story['criado_em']);
-            $dataFormatada = $dataStory->format('d/m H:i');
-            $ehMeuStory = $story['idusuario'] == $idusuario_logado;
-        ?>
-            <div class="story-item" data-story-id="<?= $story['idstory'] ?>" data-media="../login/uploads/<?php echo htmlspecialchars($story['midia']); ?>" data-type="<?php echo $story['tipo']; ?>">
-                <div class="story-header">
-                    <div class="story-author-info">
-                        <img src="../login/uploads/<?= htmlspecialchars($story['foto_perfil']) ?>" alt="<?= htmlspecialchars($story['nome']) ?>" class="story-author-avatar">
-                        <div class="story-author-details">
-                            <p class="story-author-name"><?= htmlspecialchars($story['nome']) ?></p>
-                            <p class="story-author-username">@<?= htmlspecialchars($story['nome_usuario']) ?></p>
-                            <p class="story-date"><?= $dataFormatada ?></p>
-                        </div>
-                    </div>
-                    <?php if ($ehMeuStory): ?>
-                        <button class="story-delete-btn" onclick="deletarStory(<?= $story['idstory'] ?>)" title="Deletar story">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    <?php endif; ?>
-                </div>
-                <div class="story-content-preview">
-                    <img src="../login/uploads/<?= htmlspecialchars($story['midia']) ?>" alt="<?= htmlspecialchars($story['nome']) ?>" class="story-preview-img">
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-</div>
-
-<div class="story-viewer hidden">
-    <div class="progress-bar"></div>
-    <div class="story-viewer-header">
-        <div class="story-viewer-author">
-            <img id="viewer-author-avatar" src="" alt="" class="viewer-avatar">
-            <div class="viewer-author-info">
-                <span id="viewer-author-name" class="viewer-author-name"></span>
-                <span id="viewer-author-username" class="viewer-author-username"></span>
-                <span id="viewer-story-date" class="viewer-story-date"></span>
-            </div>
-        </div>
-        <button class="story-close">✖</button>
-    </div>
-    <div class="story-content"></div>
-    <div class="nav-left">&lt;</div>
-    <div class="nav-right">&gt;</div>
-</div>
 
 
 

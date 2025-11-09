@@ -7,9 +7,28 @@
     --text-secondary: #666666;
 }
 
+
+:root {
+    --dark-bg-primary: #0f0f0f;
+    --dark-bg-secondary: #1a1a1a;
+    --dark-bg-tertiary: #2d2d2d;
+    --dark-bg-hover: #3a3a3a;
+    --dark-border: #333333;
+    --dark-border-light: #404040;
+    --dark-text-primary: #ffffff;
+    --dark-text-secondary: #b3b3b3;
+    --dark-text-muted: #888888;
+    --dark-accent: #008EE0;
+    --dark-accent-hover: #00a0f0;
+    --dark-success: #00d4aa;
+    --dark-error: #ff6b6b;
+    --dark-warning: #ffb347;
+}
+
 .configuracoes-main {
     padding: 30px;
-    background: #f5f5f5;
+        background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
     min-height: 100vh;
     width: calc(100% - 223px);
     max-width: none;
@@ -24,7 +43,8 @@
 
 /* Garantir que o fundo cinza vá até o final no modo claro */
 body:not(.tema-escuro) .configuracoes-main {
-    background: #f5f5f5;
+        background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
     min-height: 100vh;
     height: 100%;
 }
@@ -54,7 +74,7 @@ body.tema-escuro .form-group label {
 
 body.tema-escuro .form-group input {
     background: #3a3a3a;
-    border-color: #4a4a4a;
+    border-bottom: 1px solid var(--dark-border);
     color: #ffffff;
 }
 
@@ -68,7 +88,9 @@ body.tema-escuro .logout-description {
 
 /* Cards de Configuração */
 .config-card {
-    background: white;
+    background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
+    border: 1px solid var(--dark-border);
     border-radius: 12px;
     padding: 25px;
     margin-bottom: 20px;
@@ -139,7 +161,7 @@ body.tema-escuro .logout-description {
 .radio-custom {
     width: 20px;
     height: 20px;
-    border: 2px solid #ccc;
+    border: 2px solid var(--dark-border);
     border-radius: 50%;
     position: relative;
     transition: all 0.2s;
@@ -189,11 +211,15 @@ body.tema-escuro .logout-description {
 
 .form-group input {
     padding: 12px 15px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--dark-border);
     border-radius: 8px;
     font-size: 14px;
-    transition: border-color 0.2s;
     font-family: inherit;
+        background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
+    border: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+    border-radius: 12px;
 }
 
 .form-group input:focus {
