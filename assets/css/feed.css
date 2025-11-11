@@ -694,7 +694,8 @@ nav ul li.ativo a {
 
   /* Postagem */
   .post {
-    background: #fff;
+            background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
     border-radius: 15px;
     margin-bottom: 25px;
     overflow: hidden;
@@ -713,8 +714,8 @@ nav ul li.ativo a {
     gap: 8px;
     margin-bottom: 20px;
     padding: 10px 20px;
-    background: #f5f5f5;
-    color: #333;
+        background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
     text-decoration: none;
     border-radius: 10px;
     font-weight: 600;
